@@ -26,8 +26,15 @@ def index2():
     return html
 
 
+@app.route("/xixi2")
+def index3():
+    html = render_template("index3.html", **locals())
+    return html
+
+
 if __name__ == "__main__":
     app.run(debug=True)
 
 # 本案例配合templates目录内index.html和static目录内图片完成对小数点的格式化和图片资源的展示
 # 第二个路由配合filter文件和index2.html完成了自定义过滤器的小数点格式化操作
+# 第三个路由配合filter文件和index3.html完成了自定义过滤器的手机号加密操作
