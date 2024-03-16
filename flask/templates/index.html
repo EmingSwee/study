@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>价格</th>
+            <th>标题</th>
+            <th>封面</th>
+        </tr>
+        {% for book in book_list %}
+         <tr>
+            <th>{{book.id}}</th>
+<!--            <th>{{"%.2f" % book.price}}</th> 格式化小数点方法1-->
+             <th>{{"%.2f" | format(book.price)}}</th>
+            <th>{{book.title}}</th>
+            <th>{{book.author | safe}}</th>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
